@@ -9,3 +9,9 @@ const html = {
 
 const apiKey = '1vbBsFqGS6MWA0hvpBq0';
 const baseURL = 'https://api.winnipegtransit.com/v3/';
+
+function getStreets(query) {
+  return fetch(`${baseURL}streets.json?api-key=${apiKey}&street=${streetKey}`)
+    .then((response) => response.json())
+    .then((data) => data.stops);
+};
